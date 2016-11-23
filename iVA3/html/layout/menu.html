@@ -1,0 +1,32 @@
+<ul>
+	<li id="liLiveId" ng-class="isActiveLive?'active':''" ng-click="set_ActiveLive()">
+		<a href="#live">
+			<i class='icon-video-chat'></i>
+			<span>{{ 'LIVE' | translate }}</span>
+		</a>
+	</li>
+	<li id="liCameraId" ng-class="isActiveCameras?'active':''" ng-click="set_ActiveCameras()">
+		<a href="#camera">
+			<i class='icon-videocam-2'></i>
+			<span>{{ 'CAMERAS' | translate }}</span>
+		</a>
+	</li>
+	<li id="liFeatureId" ng-class="isActiveFeature?'active':''" ng-click="set_ActiveFeature()">
+		<a href="#feature">
+			<i class='icon-configuration28'></i>
+			<span>{{ 'FEATURE' | translate }}</span>
+		</a>
+	</li>
+	<li id="liSystemId" ng-class="isActiveSystem?'active':''" ng-click="set_ActiveSystem()">
+		<a href="#system">
+			<i class='icon-dvr-2'></i>
+			<span>{{ 'System' | translate }}</span>
+		</a>
+	</li>
+	<li id="liUserId" ng-class="isActiveUser?'active':''" ng-click="set_ActiveUser()">
+		<a href="#user">
+			<i class='icon-users'></i>
+			<span>{{ 'USER' | translate }}</span>
+		</a>
+	</li>
+</ul>

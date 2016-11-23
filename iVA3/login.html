@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+
+
+	<!--Bao Start-->
+	<script type="text/javascript" src="js/libs/angularjs/angular.js"></script>
+	<script type="text/javascript" src="js/libs/angularjs/angular-cookies.js"></script>
+	<script type="text/javascript" src="js/libs/angularjs/angular-route.js"></script>
+	<!--<script type="text/javascript" src="../js/libs/jquery/jquery-2.2.0.min.js"></script>-->
+	<script type="text/javascript" src="js/libs/angular_translate/angular-translate.js"></script>
+	<script type="text/javascript" src="js/libs/angular_translate/angular-translate-loader-static-files.js"></script>
+	<script type="text/javascript" src="js/libs/angularjs/angular-sanitize.js"></script>
+	<script type="text/javascript" src="js/directives/clickoutside.directive.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
+	<script type="text/javascript" src="js/controllers/Login.js"></script>
+	<script type="text/javascript" src="js/directives/input.js"></script>
+	<!--<script type="text/javascript" src="../js/controllers/System.js"></script>-->
+	<!--<script type="text/javascript" src="../js/controllers/Live.js"></script>-->
+
+	<!--Bao End-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iVA</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- BEGIN CORE CSS -->
+	<link rel="stylesheet" href="ivaTemplates/assets/admin1/css/admin1.css">
+	<link rel="stylesheet" href="ivaTemplates/assets/globals/css/elements.css">
+	<!-- END CORE CSS -->
+	<!-- BEGIN PLUGINS CSS -->
+	<link rel="stylesheet" href="ivaTemplates/assets/globals/css/plugins.css">
+	<link rel="stylesheet" href="ivaTemplates/assets/globals/css/fontello.css">
+	<link rel="stylesheet/less" href="ivaTemplates/assets/less/app.master.less">
+	<!-- END PLUGINS CSS -->
+
+	<!-- BEGIN SHORTCUT AND TOUCH ICONS -->
+	<link rel="shortcut icon" href="ivaTemplates/assets/globals/img/icons/logo_black.png">
+	<link rel="apple-touch-icon" href="ivaTemplates/assets/globals/img/icons/logo_black.png">
+	<!-- END SHORTCUT AND TOUCH ICONS -->
+	<script src="ivaTemplates/assets/globals/plugins/modernizr/modernizr.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="LoginController" class="bg-login printable">
+
+
+	<div class="login-screen">
+		<div class="panel-login blur-content">
+			<div class="panel-heading"><img src="ivaTemplates/assets/globals/img/icons/logo_white.png" height="100" alt=""></div>
+			<!--.panel-heading-->
+
+			<div id="pane-login" class="panel-body active">
+				<div class="form-group">
+					<div class="inputer">
+						<div class="input-wrapper">
+							<i class="icon-user-1"></i>
+							<input type="text" class="form-control" placeholder="Enter your  Username" ng-model="userId">
+						</div>
+					</div>
+				</div>
+				<!--.form-group-->
+				<div class="form-group">
+					<div class="inputer">
+						<div class="input-wrapper">
+							<i class="icon-key"></i>
+							<input type="password" class="form-control" placeholder="Enter your password" ng-model="password" my-enter="login()">
+						</div>
+					</div>
+				</div>
+				<!--.form-group-->
+				<div class="form-group">
+					<label>
+						<input type="checkbox" id="rememberId" name="remember" ng-true-value="true" ng-false-value="false" /> Remember me</label>
+				</div>
+				<!--.form-buttons-->
+
+				<div class="form-buttons sign-in-button clearfix">
+					<button type="button" class="btn btn-primary item-full" ng-click="login()">Sign in</button>
+				</div>
+				<!--.form-buttons-->
+
+
+				<ul class="extra-links">
+					<li><a href="#" class="show-pane-forgot-password">Forgot your password</a></li>
+				</ul>
+			</div>
+			<!--#login.panel-body-->
+
+
+		</div>
+		<!--.blur-content-->
+	</div>
+	<!--.login-screen-->
+
+	<div class="bg-blur dark active">
+		<div class="overlay"></div>
+		<!--.overlay-->
+	</div>
+
+
+
+	<!-- BEGIN GLOBAL AND THEME VENDORS -->
+	<script src="ivaTemplates/assets/globals/js/global-vendors.js"></script>
+	<!-- END GLOBAL AND THEME VENDORS -->
+
+	<!-- BEGIN PLUGINS AREA -->
+	<!-- END PLUGINS AREA -->
+
+	<!-- PLUGINS INITIALIZATION AND SETTINGS -->
+	<!-- END PLUGINS INITIALIZATION AND SETTINGS -->
+
+	<!-- PLEASURE -->
+	<script src="ivaTemplates/assets/globals/js/pleasure.js"></script>
+	<!-- ADMIN 1 -->
+	<script src="ivaTemplates/assets/admin1/js/layout.js"></script>
+	<script src="ivaTemplates/assets/less/less.min.js"></script>
+
+	<!-- BEGIN INITIALIZATION-->
+	<script>
+	$(document).ready(function () {
+		Pleasure.init();
+		Layout.init();
+	});
+	</script>
+	<!-- END INITIALIZATION-->
+</body>
+
+</html>

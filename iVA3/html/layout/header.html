@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h1>video analytics <small>v1.0</small></h1>
+    </div>
+    <!--.col-->
+    <div class="col-sm-6">
+        <ol class="breadcrumb">
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                    <i class="icon-user"></i> {{ 'WELCOME' | translate }}
+                    <strong>i3admin</strong>
+                    <i class=" icon-down-open-mini-1"></i>
+                </a>
+                <ul class="dropdown-menu iva right dark-1" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">{{ 'CHANGE_PASSWORD' | translate }}</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li ng-controller="LoginController"><a href="#" ng-click="logOut()">{{ 'LOGOUT' | translate }}</a></li>
+                </ul>
+            </li>
+            <li class="lang-flag">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                    <img ng-show="isEnglish" src="assets/globals/img/en.png" alt="" />
+                    <img ng-show="isEnglish!=true" src="assets/globals/img/fr.png" alt="" />
+                    <i class=" icon-down-open-mini-1"></i>
+                </a>
+                <ul class="dropdown-menu iva right dark-1" aria-labelledby="dropdownMenu1">
+                    <li>
+                        <a href="#" ng-click="chooseLanguage('en')" class="translate" id="en"><img src="assets/globals/img/en.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="chooseLanguage('fr')" class="translate" id="fr"><img src="assets/globals/img/fr.png" alt="" /></a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <!--.col-->
+</div>
+<!--.row-->

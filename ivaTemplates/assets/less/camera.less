@@ -1,0 +1,307 @@
+// -------------------------------
+// START : camera-page main layout
+.camera-page {
+    .header-page-view {
+        padding: 0px 40px 0px 40px;
+        .list-tab {
+            padding: 0px;
+            li {
+                padding: 0px;
+                .bootstrap-select {
+                    height: 40px;
+                    margin-top: 10px;
+                     & > button {
+                         &.dropdown-toggle  {
+                            height: 40px;
+                            & > span {
+                                height: 40px;
+                                line-height: 30px;
+                            }
+                         }
+
+                    }
+                    & > .dropdown-menu {
+                        ul {
+                            li {
+                                paddin: 0px ;
+                                height: 40px;
+                                a {
+                                    span {
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+// END : camera-page main layout
+// -------------------------------
+
+// -------------------------------
+// START :.camera-grid-list
+.cameras-wrapper {
+    text-align: center;
+    .camera-grid-list {
+        margin-top: 30px;
+        & > .camera-item {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            &.edit-mode {
+                & > .content-camera-box {
+                    .edit-camera {
+                        display: inherit;
+                    }
+                }
+            }
+            & > .content-camera-box {
+                // overflow: hidden;
+                border: 2px solid @black-4;
+                background: @black-2;
+                position: relative;
+                .edit-camera {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: @black-2;
+                    z-index: 2000;
+                    padding: 15px;
+                    display: none;
+                    & > form {
+                        margin-top: 10px;
+                        .form-group  {
+                            margin: 5px;
+                            .bootstrap-select {
+                                width: 100%;
+                                & > button {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .btn-group[role="group"] {
+                            width: 100%;
+                            padding: 5px;
+                            & > button {
+                                width: 50%;
+                            }
+                        }
+                    } /* END :: form*/
+                }
+                // END :: edit-camera
+                .show-camera {
+                    box-shadow: 1px 5px 10px #111;
+                    position: relative;
+                    &:hover {
+                        .mask {
+                            opacity: 1;
+                            z-index: 1000;
+                            background: rgba(0, 0, 0,0.7);
+                        }
+                    }
+                    .mask {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        .transition-all();
+                        button {
+                            margin-top: 45%;
+                            animation: ripple_tiny 0.5s ease-out;
+                        }
+                    }
+                    .thumbnail-box {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        background-size: cover  !important;
+                        -webkit-background-size: cover  !important;
+                        -moz-background-size: cover  !important;
+                        -o-background-size: cover  !important;
+                        background-repeat: no-repeat !important;
+                        background-position: center center !important;
+                         .camera-status {
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            width: 16px;
+                            height: 16px;
+                            background: #666;
+                            border-radius: 50%;
+                            box-shadow: 2px 5px 10px #000;
+                            &.green {
+
+                            }
+                         }
+                    } /* END :: .thumbnail-box*/
+                } /* END :: .show-camera */
+
+                .info-camera {
+                    padding: 10px 15px;
+                    height: 60px;
+                    text-align: left;
+                    color: #f2f2f2;
+                    position: relative;
+                    h4 {
+                        font-size: 16px;
+                        color: #f2f2f2;
+                        line-height: 10px;
+                        margin-bottom: 0px;
+                        margin-top: 5px;
+                    }
+                    .ip {
+                        font-size: 12px;
+                    }
+                    .options {
+                        position: absolute;
+                        top: 16px;
+                        right: 5px;
+                        i {
+                            color: #ccc;
+                            cursor: pointer;
+                            &:hover {
+                                opacity: 0.5;
+                            }
+
+                        }
+                        & > ul {
+                            background: @black-1;
+                            width: 100px;
+                            min-width: 100px;
+                            li {
+                                a {
+                                    font-size: 12px !important;
+                                    cursor: pointer;
+                                    padding: 10px;
+                                }
+                            }
+                        }
+                    }
+
+
+                } /* END :: .info-camera */
+            }
+
+        } /* END :: & > .camera-item */
+    }
+}
+// END : .camera-grid-list
+// -------------------------------
+
+// -------------------------------
+// START  :: add-camera-dialog
+#add-camera-dialog {
+    .modal-dialog {
+        width: 1200px;
+        .modal-content {
+            .modal-header {
+                padding-bottom: 10px;
+            }
+            .modal-body {
+                .head {
+                    border-top: 1px solid @black-3;
+                    height: 50px;
+                    padding: 20px 10px;
+                    margin-bottom: 30px;
+                    .bootstrap-select {
+                        height: 40px;
+                        & > button {
+                            height: 40px;
+                        }
+                    }
+                    .btn-iva {
+                        margin-top: -11px;
+                        text-transform: capitalize;
+                    }
+                    .search-box  {
+                        background: @black-3;
+                        padding: 10px;
+                        border-radius: 3px;
+                        color: #f2f2f2;
+
+                        i {
+                            font-size: 12px
+                        }
+                        input {
+                            width: 250px;
+                            background: none;
+                            border: none;
+                            font-size: 14px;
+                            margin-top: -2px;
+                            vertical-align: middle;
+                            padding-left: 10px;
+                            &:focus {
+                                border: none;
+                                outline: none;
+                            }
+                        }
+                    }
+                } /* END head */
+
+                .discovered-camera-list {
+                    & > div {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        & > .item-camera-list {
+                            background: @black-3;
+                            padding: 10px;
+                            position: relative;
+                            .add-box {
+                                position: absolute;
+                                top: 33px;
+                                right: 15px;
+                                & > button {
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    i {
+                                        margin-left: -4px;
+                                    }
+                                }
+                            }
+                            .left {
+                                width: 80px;
+                                height: 80px;
+                                float: left;
+                                background-size: cover !important;
+                                -webkit-background-size: cover !important;
+                                -moz-background-size: cover !important;
+                                -o-background-size: cover !important;
+                                background-repeat: no-repeat !important;
+                                background-position: center center !important;
+                            }
+                            .right {
+                                float: left;
+                                padding: 5px;
+                                h4 {
+                                    font-size: 15px;
+                                    color: #f2f2f2;
+                                    line-height: 0px;
+                                    margin-top: 25px;
+                                }
+                                span {
+                                    font-size: 12px;
+                                    margin-top: -5px;
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            } /* END :: modal-body */
+        }
+    }
+}
+// END :: add-camera-dialog
+// -------------------------------

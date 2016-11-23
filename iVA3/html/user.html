@@ -1,0 +1,36 @@
+<div  class="user-page" ng-controller="UserCtrl">
+  
+    <!-- START :: header-page-view -->
+    <div class="container-fluid header-page-view">
+
+        <ul class="list-tab">
+            <li ng-click="tabActive = 1" ng-class="{'active': tabActive == 1}">
+                <span> User managerment</span>
+            </li>
+            <li ng-click="tabActive = 2" ng-class="{'active': tabActive == 2}">
+                <span> User group</span>
+            </li>
+        </ul>
+
+        <div class="pull-right button-add-user" ng-if="tabActive == 1">
+            <a class="btn btn-floating btn-iva dropshadow" data-toggle="modal" data-target="#add-user-dialog" ng-click="showDataAddNewUser()">
+                <i class="ion-android-add"></i>
+            </a>
+        </div>
+
+    </div>
+    <!-- END :: header-page-view -->
+
+
+
+    <div ng-show="tabActive == 1"
+        ng-include="'../html/user-managerment.html'"
+        class="container iva-user-list" >
+    </div>
+
+    <div ng-if="tabActive == 2"
+        ng-include="'../html/user-group.html'"
+       class="container-fluidr iva-user-group">
+    </div>
+</div>
+<!-- END :: UserCtrl div  -->
