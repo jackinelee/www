@@ -16,3 +16,30 @@ function GetGroups(urlServer,access_token) {
     });
     return result;
 }
+
+function GetToken(urlServer,userid,password){
+           var result="";
+ 
+       try {
+                               var params = {
+                    "userid": userid,
+                    "pswd": password
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: urlServer + 'api/auth',
+                    crossDomain: true,
+                    data: JSON.stringify(params),
+                    dataType: 'json',
+                    success: function (o) {
+                     result=o.token
+                    },
+                    error: function (Response) {
+                        window.location.href = 'login.html';
+                    }
+                });
+            } catch (error) {
+                window.location.href = 'login.html';
+            }
+            return result;
+}

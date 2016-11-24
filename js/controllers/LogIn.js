@@ -74,10 +74,12 @@ myApp.controller('LoginController', [
 
                     },
                     error: function (Response) {
+                        debugger;
                         window.location.href = 'login.html';
                     }
                 });
             } catch (error) {
+                debugger;
                 window.location.href = 'login.html';
             }
         }

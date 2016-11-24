@@ -28,7 +28,7 @@ myApp.controller('UserCtrl', [
 
         $scope.setupDopdownListGroup = function () {
             try {
-                $rootScope.getTokenAgain();
+                $rootScope.getToken();
                 $scope.userGroups = GetGroups($rootScope.urlServer, $rootScope.access_token);
                 $scope.dropdown.selectedIndex = 2;
                 $scope.selectedGroup = $scope.userGroups[$scope.dropdown.selectedIndex];
@@ -84,10 +84,16 @@ myApp.controller('UserCtrl', [
             } else if ((!$scope.userDisplayName) || ($scope.userDisplayName.length < 4)) {
                 $scope.isUserOK = false;
                 toastr.error('User display name need longer 4 character!');
-            } else if ((!$scope.password) || ($scope.password.length < 4)) {
-                $scope.isUserOK = false;
-                toastr.error('Password need  longer 4 character. Try again!');
-            } else if ($scope.password !== $scope.confirmPassword) {
+            } else if (!$scope.password)
+            { 
+                    $scope.isUserOK = false;
+                    toastr.error('User need to have a password!');
+            } 
+            else if(($scope.password!=null)&&($scope.password.length < 4)){
+                    $scope.isUserOK = false;
+                    toastr.error('Password need  longer 4 character. Try again!');
+                }
+             else if ($scope.password !== $scope.confirmPassword) {
                 $scope.isUserOK = false;
                 toastr.error('Wrong confirm password. Try again!');
             } else if ((!$scope.selectedGroup.id) || ($scope.selectedGroup.id == "?")) {
@@ -121,13 +127,13 @@ myApp.controller('UserCtrl', [
         }
 
         $scope.deleteUser = function (_user) {
-
-            $rootScope.getTokenAgain();
+debugger;
+            $rootScope.getToken();
             var _url = $rootScope.urlServer + 'api/users/' + _user.id + '?access_token=' + $rootScope.access_token;
             $.ajax({
                 type: 'DELETE',
                 url: _url,
-                crossDomain: true,
+               // crossDomain: true,
                 dataType: 'json',
                 success: function (responseData, textStatus, jqXHR) {
                     alert('OK');
@@ -137,9 +143,8 @@ myApp.controller('UserCtrl', [
                 }
             });
         }
-        $rootScope.getTokenAgain();
         $scope.getUsersFromServer = function () {
-
+            $rootScope.getToken();
             var result = undefined;
             var _url = $rootScope.urlServer + 'api/users';
             $.ajax({
