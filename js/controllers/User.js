@@ -120,14 +120,12 @@ myApp.controller('UserCtrl', [
 
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    debugger
                     toastr.error('Add ' + $scope.userDisplayName + ' fail');
                 }
             });
         }
 
         $scope.deleteUser = function (_user) {
-debugger;
             $rootScope.getToken();
             var _url = $rootScope.urlServer + 'api/users/' + _user.id + '?access_token=' + $rootScope.access_token;
             $.ajax({
@@ -157,7 +155,6 @@ debugger;
                     result = responseData;
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    debugger;
                     window.location.href = 'login.html';
                 }
             });
