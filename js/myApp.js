@@ -25,7 +25,7 @@ myApp.config([
     '$translateProvider',
     function ($translateProvider) {
         //Set file json for lanaguage
-        $translateProvider.useStaticFilesLoader({prefix: '../translations/translation-', suffix: '.json'});
+        $translateProvider.useStaticFilesLoader({prefix: 'translations/translation-', suffix: '.json'});
         //Load 'en' default
         $translateProvider.preferredLanguage('en');
     }
