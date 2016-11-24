@@ -12,11 +12,11 @@ myApp.config([
     '$locationProvider',
     function ($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/live', {templateUrl: '../html/live.html'})
-            .when('/camera', {templateUrl: '../html/camera.html'})
-            .when('/feature', {templateUrl: '../html/user.html'})
-            .when('/system', {templateUrl: '../html/user.html'})
-            .when('/user', {templateUrl: '../html/user.html'})
+            .when('/live', {templateUrl: 'html/live.html'})
+            .when('/camera', {templateUrl: 'html/camera.html'})
+            .when('/feature', {templateUrl: 'html/user.html'})
+            .when('/system', {templateUrl: 'html/user.html'})
+            .when('/user', {templateUrl: 'html/user.html'})
     }
 ]);
 
