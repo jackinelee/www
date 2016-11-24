@@ -129,10 +129,10 @@ myApp.controller('UserCtrl', [
             $rootScope.getToken();
             var _url = $rootScope.urlServer + 'api/users/' + _user.id + '?access_token=' + $rootScope.access_token;
             $.ajax({
-                type: 'DELETE',
+                method: 'DELETE',
                 url: _url,
                // crossDomain: true,
-                dataType: 'json',
+              //  dataType: 'json',
                 success: function (responseData, textStatus, jqXHR) {
                     alert('OK');
                 },
@@ -140,7 +140,24 @@ myApp.controller('UserCtrl', [
                     alert('delete failed.');
                 }
             });
+
+                // var req = {
+                // method: 'DELETE',
+                // url: _url,
+                // headers: {
+                // 'Content-Type': undefined
+                // },
+                // data: { test: 'test' }
+                // }
+
+                // $http(req).then(function(){
+                // alert('OK1');    
+                // }, function(){
+                // alert('No1');    
+                // });
+
         }
+
         $scope.getUsersFromServer = function () {
             $rootScope.getToken();
             var result = undefined;
@@ -168,7 +185,7 @@ myApp.controller('UserCtrl', [
             $.ajax({
                 type: 'PUT',
                 url: _url,
-                crossDomain: true,
+              // crossDomain: true,
                 data: JSON.stringify(collectInfoUser()),
                 dataType: 'json',
                 success: function (responseData, textStatus, jqXHR) {
