@@ -76,12 +76,17 @@
         <tr id="cameraTrId">
 
             <td>
-                Cameras
+                Cameras {{groupSelected.name}}
             </td>
 
             <td ng-repeat="role in roles" >
-                <div class="radioer radioer-light-blue form-inline center">
-                    <input type="radio" name="Cameras" value="{{role.name}}" ng-checked="role.isActive" >
+                <!--<div class="radioer radioer-light-blue form-inline center">
+                    <input type="radio" name="Cameras" value="{{role.name}}" ng-checked="role.isActive"  >
+                    <label for="{{role.name}}"></label>
+                </div>-->
+                {{role.name}}-{{role.isActive}}
+                  <div class="radioer radioer-light-blue form-inline center">
+                    <input type="radio" name="Cameras" value="{{role.name}}" ng-checked="role.isActive"  >
                     <label for="{{role.name}}"></label>
                 </div>
                 <!--.radio-->
