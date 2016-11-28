@@ -59,6 +59,11 @@ myApp.controller('CameraController' , [
                  $('.add-box').removeClass('open');
             }
         }
+        $scope.closeThisManual = function () {
+            if( $('.manual-add').addClass('open') ) {
+                 $('.manual-add').removeClass('open');
+            }
+        }
 
 
     } /* END :: main function */

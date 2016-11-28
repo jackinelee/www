@@ -16,7 +16,54 @@
             <option value="option"></i> Sort by : Name</option>
             <option value="option">Sort by : IP</option>
         </select>
-        <button type="button" class="btn btn-iva btn-lg" name="button">Manual  Add</button>
+        <div class="manual-add">
+            <button  pop-menu type="button"
+            data-toggle="popover" aria-haspopup="true" aria-expanded="false"
+            class="btn btn-iva btn-lg open-popover" name="button">
+                Manual  Add
+            </button>
+
+            <div class="dropdown-menu iva-dropdown-list iva-popover bottom" click-outside="closeThisManual(even)"
+              outside-if-not="open-popover">
+                <form>
+                    <div class="form-group iva-form-group">
+                        <input type="text" class="form-control"  placeholder="Name">
+                    </div>
+                    <div class="form-group iva-form-group">
+                        <input type="text" class="form-control"  placeholder="Ip address or hostname">
+                    </div>
+                    <div class="form-group iva-form-group">
+                        <input type="text" class="form-control"  placeholder="ID">
+                    </div>
+                    <div class="form-group iva-form-group">
+                        <input type="text" class="form-control"  placeholder="Username">
+                    </div>
+                    <div class="form-group iva-form-group">
+                        <input type="password" class="form-control"  placeholder="Password">
+                    </div>
+                    <div class="form-group iva-form-group">
+                        <select ivaselect class="selecter">
+                            <option value="option">Adapter : ANNEXXUS </option>
+                            <option value="option">Adapter : ANNEXXUS </option>
+                            <option value="option">Adapter : ANNEXXUS </option>
+                            <option value="option">Adapter : ANNEXXUS </option>
+                            <option value="option">Adapter : ANNEXXUS </option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-iva grey">
+                           <i class=" icon-cancel-1"></i>
+                      </button>
+                      <button type="button" class="btn btn-iva">
+                          <i class=" icon-ok-1"></i>
+                      </button>
+                  </div>
+
+                </form>
+            </div>
+        </div>
+
+
         <div class="search-box pull-right">
             <input type="text" name="name" placeholder="Type IP or Name to search">
             <i class="icon-search-3"></i>
@@ -26,32 +73,6 @@
 
     <div class="discovered-camera-list">
 
-        <!-- START :: a item -->
-        <div class="col-md-4 ">
-            <div class="item-camera-list">
-                <div class="left">
-
-                </div>
-                <div class="right">
-
-                </div>
-
-            </div>
-        </div>
-        <!-- END :: a item -->
-        <!-- START :: a item -->
-        <div class="col-md-4 ">
-            <div class="item-camera-list">
-                <div class="left">
-
-                </div>
-                <div class="right">
-
-                </div>
-
-            </div>
-        </div>
-        <!-- END :: a item -->
         <!-- START :: a item -->
         <div class="col-md-4 ">
             <div class="item-camera-list">
@@ -76,7 +97,7 @@
                              <i class='icon-save'></i>
                          </button>
                     <div class="dropdown-menu iva-dropdown-list iva-popover left" click-outside="closeThis(even)"
-                      outside-if-not="open-popover">
+                      outside-if-not="open-popover, iva-popover">
                         <form>
                             <div class="form-group iva-form-group">
                                 <input type="text" class="form-control"  placeholder="Name">
@@ -86,6 +107,9 @@
                             </div>
                             <div class="form-group iva-form-group">
                                 <input type="text" class="form-control"  placeholder="ID">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="Username">
                             </div>
                             <div class="form-group iva-form-group">
                                 <input type="text" class="form-control"  placeholder="Password">
@@ -107,19 +131,66 @@
             </div>
         </div>
         <!-- END :: a item -->
+
         <!-- START :: a item -->
         <div class="col-md-4 ">
             <div class="item-camera-list">
-                <div class="left">
-
+                <div class="left" style="background : url('content/thumbnail/2.png');">
                 </div>
                 <div class="right">
-
+                    <h4>ANNEXXUS 51</h4>
+                    <span>192.168.21.201</span>
                 </div>
+                <div class="add-box">
+                    <button type="button" pop-menu
+                         data-placement="left"
+                         data-toggle="popover" aria-haspopup="true" aria-expanded="false"
+                         class="btn  btn-iva btn-md open-popover" name="button">
+                             <i class='ion-android-add'></i>
+                         </button>
 
+                         <button type="button" pop-menu
+                         data-placement="left"
+                         data-toggle="popover" aria-haspopup="true" aria-expanded="false"
+                         class="btn  btn-iva btn-md warning close-popover" name="button">
+                             <i class='icon-save'></i>
+                         </button>
+                    <div class="dropdown-menu iva-dropdown-list iva-popover left" click-outside="closeThis(even)"
+                      outside-if-not="open-popover, iva-popover">
+                        <form>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="Name">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="Ip address or hostname">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="ID">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="Username">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <input type="text" class="form-control"  placeholder="Password">
+                            </div>
+                            <div class="form-group iva-form-group">
+                                <select ivaselect class="selecter">
+                                    <option value="option">Adapter : ANNEXXUS </option>
+                                    <option value="option">Adapter : ANNEXXUS </option>
+                                    <option value="option">Adapter : ANNEXXUS </option>
+                                    <option value="option">Adapter : ANNEXXUS </option>
+                                    <option value="option">Adapter : ANNEXXUS </option>
+                                </select>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
             </div>
         </div>
         <!-- END :: a item -->
+
 
     </div>
 

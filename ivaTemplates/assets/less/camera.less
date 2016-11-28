@@ -220,6 +220,27 @@
                         margin-top: -11px;
                         text-transform: capitalize;
                     }
+                    .manual-add {
+                        display: inline-block;
+                        position: relative;
+                        & > .iva-popover {
+                            &::before {
+                                content:  "\ec01";
+                                font-family: "fontello";
+                                position: absolute;
+                                left: 10px;
+                                top: -30px;
+                                font-size: 30px;
+                                color: @black-1;
+                            }
+                        }
+                        .btn-group[role="group"] {
+                            width: 100%;
+                            & > button {
+                                width: 50%;
+                            }
+                        }
+                    }
                     .search-box  {
                         background: @black-3;
                         padding: 10px;
