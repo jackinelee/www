@@ -23,6 +23,19 @@
     }
 }
 
+// -----------------------------------
+
+// / START :: IVA popover
+.iva-popover {
+    &.left {
+        right: 10px;
+        left: auto !important;
+    }
+}
+// END :: IVA popover
+// -----------------------------------
+
+
 
 // -----------------------------------
 // START :: IVA dropdown-menu
@@ -189,6 +202,12 @@ table {
     overflow: hidden;
     font-size: 14px;
     .transition-all(0.3s);
+    &.warning {
+       background: #eeac4e;
+       &:hover {
+           background: #e49729;
+       }
+   }
     &.grey {
         background: #999;
     }

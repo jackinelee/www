@@ -259,6 +259,23 @@
                                 position: absolute;
                                 top: 33px;
                                 right: 15px;
+                                .open-popover {
+                                   display: block;
+                               }
+                               .close-popover {
+                                   display: none;
+                                   i {
+                                       margin-left: -9px;
+                                   }
+                               }
+                               &.open {
+                                   .open-popover {
+                                       display: none;
+                                   }
+                                   .close-popover {
+                                       display: block;
+                                   }
+                               }
                                 & > button {
                                     width: 35px;
                                     height: 35px;
@@ -268,6 +285,26 @@
                                         margin-left: -4px;
                                     }
                                 }
+                                & > .iva-popover {
+                                  right: 45px;
+                                  top: -100px;
+                                  width: auto !important;
+                                  height: auto !important;
+                                  form {
+                                      .form-group {
+                                          margin-bottom: 5px;
+                                      }
+                                  }
+                                  &::before {
+                                      content:  "\ec03";
+                                      font-family: "fontello";
+                                      position: absolute;
+                                      right: -9px;
+                                      top: 90px;
+                                      font-size: 30px;
+                                      color: @black-1;
+                                  }
+                              }
                             }
                             .left {
                                 width: 80px;

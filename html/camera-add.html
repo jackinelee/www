@@ -55,7 +55,7 @@
         <!-- START :: a item -->
         <div class="col-md-4 ">
             <div class="item-camera-list">
-                <div class="left" style="background : url('../content/thumbnail/2.png');">
+                <div class="left" style="background : url('content/thumbnail/2.png');">
                 </div>
                 <div class="right">
                     <h4>ANNEXXUS 51</h4>
@@ -63,12 +63,19 @@
                 </div>
                 <div class="add-box">
                     <button type="button" pop-menu
-                    data-placement="left"
-                    data-toggle="popover" aria-haspopup="true" aria-expanded="false"
-                    class="btn  btn-iva btn-md open-popover" name="button">
-                        <i class='ion-android-add'></i>
-                    </button>
-                    <div class="dropdown-menu iva-dropdown-list " click-outside="closeThis(even)"
+                         data-placement="left"
+                         data-toggle="popover" aria-haspopup="true" aria-expanded="false"
+                         class="btn  btn-iva btn-md open-popover" name="button">
+                             <i class='ion-android-add'></i>
+                         </button>
+
+                         <button type="button" pop-menu
+                         data-placement="left"
+                         data-toggle="popover" aria-haspopup="true" aria-expanded="false"
+                         class="btn  btn-iva btn-md warning close-popover" name="button">
+                             <i class='icon-save'></i>
+                         </button>
+                    <div class="dropdown-menu iva-dropdown-list iva-popover left" click-outside="closeThis(even)"
                       outside-if-not="open-popover">
                         <form>
                             <div class="form-group iva-form-group">
