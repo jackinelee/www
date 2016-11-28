@@ -134,27 +134,33 @@ myApp.controller('UserCtrl', [
                // crossDomain: true,
               //  dataType: 'json',
                 success: function (responseData, textStatus, jqXHR) {
-                    alert('OK');
+                    toastr.success('Delete ' + _user.name + ' success!');
+                    $scope.bindUsersToTable();
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    alert('delete failed.');
+                    toastr.error('Delete ' + _user.name + ' fail!');
+                    $scope.bindUsersToTable();
                 }
             });
 
-                // var req = {
-                // method: 'DELETE',
-                // url: _url,
-                // headers: {
-                // 'Content-Type': undefined
-                // },
-                // data: { test: 'test' }
-                // }
+            // $.ajax({
+            //     url: _url,
+            //     type: 'DELETE',
+            //     success: function(result) {
+            //       alert('OK');
+            //     }
+            // });
 
-                // $http(req).then(function(){
-                // alert('OK1');    
-                // }, function(){
-                // alert('No1');    
-                // });
+                // $http({
+                //         type : "DELETE",
+                //         url : _url
+                //     }).then(function mySucces(response) {
+                //         debugger
+                //         $scope.myWelcome = response.data;
+                //     }, function myError(response) {
+                //         alert('No1');   
+                //         $scope.myWelcome = response.statusText;
+                //     });
 
         }
 
