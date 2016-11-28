@@ -2,6 +2,8 @@
 myApp.controller('UserGroupCtrl', function ($scope, $rootScope) {
     $scope.userGroups = {};
     $scope.groupSelected = {};
+    $scope.updateTime = Date.now();
+    $scope.groupname="bao";
     var _params = {
         "name": $scope.groupName,
         "permissions": "system=----;user=----;camera=crud"
@@ -103,6 +105,9 @@ myApp.controller('UserGroupCtrl', function ($scope, $rootScope) {
     //Select group
     $scope.selectGroup = function (item) {
         $scope.groupSelected = item;
+        $scope.groupname=$scope.groupSelected.name
+        
+        toastr.success($scope.groupSelected.name);
     }
 
 //----------------End Bind data View--------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<table class="table iva-table" ng-controller="UserGroupCtrl">
+<table class="table iva-table" >
     <caption>
         <h4 ng-if="editGroup == false ">
             <i class="icon-group"></i> Group: Administator
@@ -76,17 +76,16 @@
         <tr id="cameraTrId">
 
             <td>
-                Cameras {{groupSelected.name}}
+                Cameras 
             </td>
 
-            <td ng-repeat="role in roles" >
+            <td ng-repeat="role in groupSelected.objRole" >
                 <!--<div class="radioer radioer-light-blue form-inline center">
                     <input type="radio" name="Cameras" value="{{role.name}}" ng-checked="role.isActive"  >
                     <label for="{{role.name}}"></label>
                 </div>-->
-                {{role.name}}-{{role.isActive}}
-                  <div class="radioer radioer-light-blue form-inline center">
-                    <input type="radio" name="Cameras" value="{{role.name}}" ng-checked="role.isActive"  >
+               <div class="radioer radioer-light-blue form-inline center">
+                    <input type="radio" name="Cameras" value="{{role.name}}" id="{{role.name}}" ng-checked="role.isActive"  >
                     <label for="{{role.name}}"></label>
                 </div>
                 <!--.radio-->
