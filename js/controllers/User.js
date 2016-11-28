@@ -191,14 +191,14 @@ myApp.controller('UserCtrl', [
             $.ajax({
                 type: 'PUT',
                 url: _url,
-              // crossDomain: true,
                 data: JSON.stringify(collectInfoUser()),
                 dataType: 'json',
                 success: function (responseData, textStatus, jqXHR) {
-                    alert('OK');
+                    toastr.success('Update ' + _user.name + ' success!');
+                    $scope.bindUsersToTable();
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    alert('POST failed.');
+                    toastr.error('Update ' + _user.name + ' fail!');
                 }
             });
         }
