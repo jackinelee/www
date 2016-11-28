@@ -9,7 +9,7 @@ myApp.config([
             .when('/live', {templateUrl: 'html/live.html'})
             .when('/camera', {templateUrl: 'html/camera.html'})
             .when('/feature', {templateUrl: 'html/user.html'})
-            .when('/system', {templateUrl: 'html/user.html'})
+            .when('/system', {templateUrl: 'html/system.html'})
             .when('/user', {templateUrl: 'html/user.html'})
     }
 ]);
@@ -49,7 +49,7 @@ myApp.run(function ($rootScope, $cookies) {
                     $rootScope.access_token = o.token;
                 },
                 error: function (Response) {
-            toastr.error('Something Wrong!');        
+            toastr.error('Something Wrong!');
                     window.location.href = 'login.html';
                 }
             });
